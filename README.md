@@ -5,7 +5,6 @@ Aspect Term Extraction](submitted to IEEE Transactions on Affective Computing an
 ## Data
 [[Laptop](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
 [[Restaurant 16](https://github.com/leekum2018/CLE4ATE/tree/main/Restaurants16_flat)]:
-the constituency parsing results has been already provided in the processed data.
 
 ## Requirements (??)
 * pytorch=1.3.1
@@ -46,26 +45,7 @@ sh train.sh
 
 ## Baselines 
 
-
-
-## Citation
-If you used the datasets or code, please cite our paper:
-```bibtex
-@inproceedings{yang-etal-2020-constituency,
-    title = "Constituency Lattice Encoding for Aspect Term Extraction",
-    author = "Yang Yunyi, Li Kun, Quan Xiaojun, Shen Weizhou and Su Qinliang",
-    booktitle = "Proceedings of the 28th International Conference on Computational Linguistics",
-    month = dec,
-    year = "2020",
-    address = "Barcelona, Spain (Online)",
-    publisher = "International Committee on Computational Linguistics",
-    url = "https://www.aclweb.org/anthology/2020.coling-main.73",
-    doi = "10.18653/v1/2020.coling-main.73",
-    pages = "844--855"
-}
-```
-
-## Reference
-[1]. Hu Xu, Bing Liu, Lei Shu, Philip Yu. [Bert post-training for review reading comprehension and aspect-based sentiment analysis](https://www.aclweb.org/anthology/N19-1242.pdf). In Proceedings of NAACL, 2019.
-
-
+1. DE-CNN [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
+2. Seq4Seq [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
+3. MT-TSMSA [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
+4. CL-BERT [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
