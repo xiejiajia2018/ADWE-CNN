@@ -6,7 +6,7 @@ Aspect Term Extraction](submitted to IEEE Transactions on Affective Computing an
 [[Laptop](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
 [[Restaurant 16](https://github.com/leekum2018/CLE4ATE/tree/main/Restaurants16_flat)]:
 
-## Requirements (??)
+## Requirements
 * pytorch=1.3.1
 * python=3.7.5
 * transformers=2.3.0
@@ -38,10 +38,11 @@ python train_res.py
 
 - ### Step 3: 
 Evaluate:
-```
-python evaluation_laptop.py [checkpoints](https://drive.google.com/file/d/14AI4cA1jk5Ifa9RERw7f-kAOpOxHVBA7/view?usp=share_link)
-python evaluation_res.py [checkpoints](https://drive.google.com/file/d/1AUnm_bOgVSXX-Y78Nw-0o0NYZ5L0dbg-/view?usp=sharing)
-```
+
+python evaluation_laptop.py [[checkpoints](https://drive.google.com/file/d/14AI4cA1jk5Ifa9RERw7f-kAOpOxHVBA7/view?usp=share_link)]
+
+python evaluation_res.py [[checkpoints](https://drive.google.com/file/d/1AUnm_bOgVSXX-Y78Nw-0o0NYZ5L0dbg-/view?usp=sharing)]
+
 
 
 
