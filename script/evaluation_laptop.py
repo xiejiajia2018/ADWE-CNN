@@ -1186,8 +1186,6 @@ class Model(torch.nn.Module):
 
         projected_cat = torch.cat(
             (domain_embedding.unsqueeze(2), gen_embedding.unsqueeze(2)), dim=2)
-        # projected_cat = torch.cat(( self.gen_embedding(x), domain_embedding), dim=2)
-
         s_len, b_size, _, emb_dim = projected_cat.size()
         attn_input = projected_cat
         attn_input = attn_input.view(s_len, b_size * 2, -1)
@@ -1196,37 +1194,9 @@ class Model(torch.nn.Module):
         self.m_attn = torch.sigmoid(self.m_attn)
         attended = projected_cat * self.m_attn.view(s_len, b_size, 2,
                                                     1).expand_as(projected_cat)
-        # x_conv = attended.view(s_len, b_size, 900)
         x_conv = attended.sum(2)
-        '''
-        projected_cat = torch.cat((aaa.unsqueeze(2),self.domain_embedding(x).unsqueeze(2), self.gen_embedding(x).unsqueeze(2)), dim=2)
-        s_len, b_size, _, emb_dim = projected_cat.size()
-        attn_input = projected_cat
-        attn_input = attn_input.view(s_len, b_size * 3, -1)
-        self.m_attn = self.attn_1((self.attn_0(attn_input)[0]))
-        self.m_attn = self.m_attn.view(s_len, b_size, 3)
-        self.m_attn = torch.sigmoid(self.m_attn)
-        attended = projected_cat * self.m_attn.view(s_len, b_size, 3, 1).expand_as(projected_cat)
-        # x_conv = attended.view(s_len, b_size, 600)
-        x_conv = projected_cat.sum(2)
-        '''
-#        x_emb = torch.cat((self.domain_embedding(x),self.gen_embedding(x)), dim=2).transpose(1, 2)
-        '''
-        projected_cat = torch.cat((aaa, self.domain_embedding(x), self.gen_embedding(x)), dim=2)
-        #s_len, b_size, _, emb_dim = projected_cat.size()
-        #attn_input = projected_cat
-        #attn_input = attn_input.view(s_len, b_size * 2, -1)
-        #self.m_attn = self.attn_1((self.attn_0(attn_input)[0]))
-        #self.m_attn = self.m_attn.view(s_len, b_size,2)
-        #self.m_attn = torch.sigmoid(self.m_attn)
-        #attended = projected_cat * self.m_attn.view(s_len, b_size, 2, 1).expand_as(projected_cat)
-        # x_conv = attended.view(s_len, b_size, 600)
-        x_conv = projected_cat#.sum(2) 
-        '''
+
         x_conv = self.dropout((x_conv)).transpose(1, 2)
-        #x_conv1 = self.linear_ae1(x_conv)
-        #x_conv1 = self.dropout(x_conv1)
-        #x_logit = self.linear_ae(x_conv1)
 
         x_conv = torch.nn.functional.relu(torch.cat((self.conv1(x_conv), self.conv2(x_conv)), dim=1))
 
@@ -1238,8 +1208,6 @@ class Model(torch.nn.Module):
         x_conv = torch.nn.functional.relu(self.conv5(x_conv))
         x_conv = self.dropout(x_conv)
         x_conv = torch.nn.functional.relu(self.conv6(x_conv))
-        #x_conv = self.dropout(x_conv)
-        #x_conv = torch.nn.functional.relu(self.conv7(x_conv))
         x_conv = x_conv.transpose(1, 2)
         x_logit = self.linear_ae(x_conv)
 
@@ -1437,7 +1405,7 @@ if __name__ == "__main__":
     parser.add_argument('--data_dir', type=str, default="../data/prep_data/")
     #parser.add_argument('--model_dir', type=str, default="../model2/")
     #parser.add_argument('--domain', type=str, default="restaurant")
-    parser.add_argument('--model_dir', type=str, default="../Decnn_laptop_model11_41/")
+    parser.add_argument('--model_dir', type=str, default="../Decnn_laptop_model/")
     parser.add_argument('--domain', type=str, default="laptop")
     args = parser.parse_args()
 
