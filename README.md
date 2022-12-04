@@ -30,18 +30,20 @@ semeval/A.jar
 ```
 
 - ### Step 2: 
-Download pre-trained model weight [[BERT-PT](https://github.com/howardhsu/BERT-for-RRC-ABSA/blob/master/pytorch-pretrained-bert.md)], and place these files as:
+Train:
 ```
-bert-pt/bert-laptop/
-bert-pt/bert-rest/
+python train_laptop.py 
+python train_res.py
 ```
-you can also specify the address of these files in config.json.
 
 - ### Step 3: 
-Train and evaluate:
+Evaluate:
 ```
-sh train.sh
+python evaluation_laptop.py [checkpoints](https://drive.google.com/file/d/14AI4cA1jk5Ifa9RERw7f-kAOpOxHVBA7/view?usp=share_link)
+python evaluation_res.py [checkpoints](https://drive.google.com/file/d/1AUnm_bOgVSXX-Y78Nw-0o0NYZ5L0dbg-/view?usp=sharing)
 ```
+
+
 
 ## Baselines 
 
