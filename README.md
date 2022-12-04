@@ -56,7 +56,7 @@ python evaluation_res.py [[checkpoints](https://drive.google.com/file/d/1AUnm_bO
 4. CL-BERT [[paper](https://aclanthology.org/2020.coling-main.73.pdf)] [[code](https://github.com/leekum2018/CLE4ATE)] [[checkpoints](https://drive.google.com/drive/folders/1wE9c5i8Y6PBXZy0RQK-5NpCv4sE5tx9D?usp=share_link)]
 
 Beside, we also modify the CL-BERT model, i.e., we add domain embedding to the representation of words.
-The code is in the CL-BERT-new/
+The code is in the [[CL-BERT-new](https://github.com/xiejiajia2018/ADWE-CNN/tree/master/CL-BERT-new)]
 
 
 Step 1:
