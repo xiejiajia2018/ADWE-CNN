@@ -48,7 +48,24 @@ python evaluation_res.py [[checkpoints](https://drive.google.com/file/d/1AUnm_bO
 
 ## Baselines 
 
-1. DE-CNN [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
-2. Seq4Seq [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
-3. MT-TSMSA [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
-4. CL-BERT [[paper](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[code](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)] [[checkpoints](https://github.com/leekum2018/CLE4ATE/tree/main/Laptops_flat)]
+1. DE-CNN [[paper](https://aclanthology.org/P18-2094/)] [[code](https://github.com/howardhsu/DE-CNN)] [[checkpoints](https://drive.google.com/drive/folders/1HV2uc_4KzCp4YgrcJJyjPjKOuxqEJ9Hh?usp=share_link)]
+2. Seq4Seq [[paper](https://www.aclweb.org/anthology/P19-1344.pdf)] [[code](https://github.com/madehong/Seq2Seq4ATE)] [[checkpoints](https://drive.google.com/drive/folders/1NKvn_OGj6sFz6M7qQKrIzQKx1LBuXEj3?usp=share_link)]
+3. MT-TSMSA [[paper](https://aclanthology.org/2021.naacl-main.145/)] [[code](https://github.com/fengyh3/TSMSA)] [[checkpoints](https://drive.google.com/drive/folders/1zGoTskFcDp_Aue8E2244ROdrHJPRQIui?usp=share_link)]
+4. CL-BERT [[paper](https://aclanthology.org/2020.coling-main.73.pdf)] [[code](https://github.com/leekum2018/CLE4ATE)] [[checkpoints](https://drive.google.com/drive/folders/1wE9c5i8Y6PBXZy0RQK-5NpCv4sE5tx9D?usp=share_link)]
+
+Beside, we also modify the CL-BERT model, i.e., we add domain embedding to the representation of words.
+The code is in the CL-BERT-new/
+
+
+Step 1:
+Download datasets and pre-trained model weight from [[code](https://github.com/leekum2018/CLE4ATE)], and place these pre-trained model weight files as:
+
+bert-pt/bert-laptop/
+bert-pt/bert-rest/
+
+Step 2:
+Train and evaluate:
+
+sh train.sh
+
+
