@@ -71,6 +71,5 @@ bert-pt/bert-rest/
 Step 2:
 Train and evaluate:
 
-sh train.sh
-
+python main.py
 
