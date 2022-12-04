@@ -28,6 +28,8 @@ semeval/EN_REST_SB1_TEST.xml.A
 semeval/EN_REST_SB1_TEST.xml.gold
 semeval/A.jar
 ```
+pre-trained embedding [[data](https://drive.google.com/file/d/1ANSgfSLbQNLSat9hijTePnJoEuJDTxYP/view?usp=sharing)]
+
 
 - ### Step 2: 
 Train:
