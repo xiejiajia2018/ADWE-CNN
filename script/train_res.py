@@ -138,35 +138,9 @@ class Model(torch.nn.Module):
         attended = projected_cat * self.m_attn.view(s_len, b_size, 2, 1).expand_as(projected_cat)
          # x_conv = attended.view(s_len, b_size, 900)
         x_conv = attended.sum(2)
-        '''
-        projected_cat = torch.cat((aaa.unsqueeze(2),self.domain_embedding(x).unsqueeze(2), self.gen_embedding(x).unsqueeze(2)), dim=2)
-        s_len, b_size, _, emb_dim = projected_cat.size()
-        attn_input = projected_cat
-        attn_input = attn_input.view(s_len, b_size * 3, -1)
-        self.m_attn = self.attn_1((self.attn_0(attn_input)[0]))
-        self.m_attn = self.m_attn.view(s_len, b_size, 3)
-        self.m_attn = torch.sigmoid(self.m_attn)
-        attended = projected_cat * self.m_attn.view(s_len, b_size, 3, 1).expand_as(projected_cat)
-        # x_conv = attended.view(s_len, b_size, 600)
-        x_conv = projected_cat.sum(2)
-        '''
-#        x_emb = torch.cat((self.domain_embedding(x),self.gen_embedding(x)), dim=2).transpose(1, 2)
-        '''
-        projected_cat = torch.cat((aaa, self.domain_embedding(x), self.gen_embedding(x)), dim=2)
-        #s_len, b_size, _, emb_dim = projected_cat.size()
-        #attn_input = projected_cat
-        #attn_input = attn_input.view(s_len, b_size * 2, -1)
-        #self.m_attn = self.attn_1((self.attn_0(attn_input)[0]))
-        #self.m_attn = self.m_attn.view(s_len, b_size,2)
-        #self.m_attn = torch.sigmoid(self.m_attn)
-        #attended = projected_cat * self.m_attn.view(s_len, b_size, 2, 1).expand_as(projected_cat)
-        # x_conv = attended.view(s_len, b_size, 600)
-        x_conv = projected_cat#.sum(2) 
-        '''
+
         x_conv = self.dropout((x_conv)).transpose(1, 2)
-        #x_conv1 = self.linear_ae1(x_conv)
-        #x_conv1 = self.dropout(x_conv1)
-        #x_logit = self.linear_ae(x_conv1)
+
 
         x_conv = torch.nn.functional.relu(torch.cat((self.conv1(x_conv), self.conv2(x_conv)), dim=1))
 
@@ -267,11 +241,9 @@ def run(domain, data_dir, model_dir, valid_split, runs, epochs, lr, dropout, bat
 if __name__ == "__main__":
 
 
- #for i in [41]:  #np.arange(41,100,3):
 
-  for jj in range(30):  # [41]: #np.arange(41,100,3):
 
-    i = random.randint(-1, 99999)
+    i = 41
     start_time = time.time()  # 记录程序开始运行时间    
     model_name = "../Decnn_res_model1_" + str(i)
     
