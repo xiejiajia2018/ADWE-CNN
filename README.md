@@ -50,6 +50,9 @@ python evaluation_res.py [[checkpoints](https://drive.google.com/file/d/1AUnm_bO
 
 ## Baselines 
 
+Kindly note that for reproducing the results of the following baselines, we use anaconda to create a new environment for each paper following the corresponding readme of their codes.
+
+
 1. DE-CNN [[paper](https://aclanthology.org/P18-2094/)] [[code](https://github.com/howardhsu/DE-CNN)] [[checkpoints](https://drive.google.com/drive/folders/1HV2uc_4KzCp4YgrcJJyjPjKOuxqEJ9Hh?usp=share_link)]
 2. Seq4Seq [[paper](https://www.aclweb.org/anthology/P19-1344.pdf)] [[code](https://github.com/madehong/Seq2Seq4ATE)] [[checkpoints](https://drive.google.com/drive/folders/1NKvn_OGj6sFz6M7qQKrIzQKx1LBuXEj3?usp=share_link)]
 3. MT-TSMSA [[paper](https://aclanthology.org/2021.naacl-main.145/)] [[code](https://github.com/fengyh3/TSMSA)] [[checkpoints](https://drive.google.com/drive/folders/1zGoTskFcDp_Aue8E2244ROdrHJPRQIui?usp=share_link)]
